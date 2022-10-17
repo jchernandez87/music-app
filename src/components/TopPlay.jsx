@@ -6,8 +6,8 @@ import { FreeMode } from 'swiper';
 import PlayPause from './PlayPause';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
 import { useGetTopChartsQuery } from '../redux/services/shazamCore';
-import "swiper/css";
-import "swiper/css/free-mode";
+import 'swiper/css';
+import 'swiper/css/free-mode';
 
 const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handlePlayClick }) => (
   <div className="w-full flex flex-ror items-center hover:bg-[#4c426e] py-2 p-4 rounded-lg cursor-pointer mb-2">
@@ -82,7 +82,7 @@ const TopPlay = () => {
       <div className="w-full flex flex-col mt-8">
         <div className="flex flex-row justify-between items-center">
           <h2 className="text-white font-bold text-2xl">Top Artist</h2>
-          <Link to="/top-artist">
+          <Link to="/top-artists">
             <p className="text-gray-300 text-base cursor-pointer">See more</p>
           </Link>
         </div>
@@ -96,7 +96,7 @@ const TopPlay = () => {
           modules={[FreeMode]}
           className="mt-4"
         >
-          {topPlays?.map((song, i) => (
+          {topPlays?.map((song) => (
             <SwiperSlide
               key={song.key}
               style={{ width: '25%', height: 'auto' }}
