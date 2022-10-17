@@ -1,5 +1,4 @@
 import { ArtistCard, Loader, Error } from '../components';
-import Track from '../components/MusicPlayer/Track';
 import { useGetTopChartsQuery } from '../redux/services/shazamCore';
 
 const TopArtist = () => {
@@ -16,7 +15,7 @@ const TopArtist = () => {
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {data?.map((track) => (
           <ArtistCard
-            key={Track.key}
+            key={track.key}
             track={track}
           />
         ))}
