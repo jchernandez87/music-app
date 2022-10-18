@@ -16,7 +16,7 @@ const Discover = () => {
   const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-100">
       <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10">
         <h2 className="font-bold text-3xl text-blue-100">
           Discover {genreTitle}
@@ -29,7 +29,7 @@ const Discover = () => {
           {currentGenres}
         </select>
       </div>
-      <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+      <div className="flex h-5/6 flex-wrap sm:justify-start justify-center gap-8">
         {data?.map((song, i) => (
           <SongCard
             key={song.key}
